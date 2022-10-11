@@ -26,7 +26,7 @@ d  =   4
 n  =   2^d
 p  =   (n/2)-1
 q  = 874
-pm = GenPolyMod(n)
+pm = HEtools::GenPolyMod(n)
 ```
 
 Create the secret key and the polynomials a and e, which will go into the public key
