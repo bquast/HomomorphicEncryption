@@ -31,14 +31,14 @@ pm = GenPolyMod(n)
 
 Create the secret key and the polynomials a and e, which will go into the public key
 ```{r}
-# create secret key
-s = polynomial( coef=c(-1, -1, 0, 0, -1, 1, 0, 0, 0, 1, 0, -1, -1, 1, -1, 0 ) )
+# generate a secret key
+s = GenSecretKey(n)
 
-# define a
-a = polynomial( coef=c(136, 239, 313, 241, 615, 37, 233, 408, 570, 8, 356, 132, 558, 110, 706, 327) )
+# generate a
+a = GenA(n, q)
 
-# define the error
-e = polynomial( coef=c(2, 7, -2, -2, 8, 1, 0, 3, 6, -2, -2, 6, 3, 4, -3) )
+# generate the error
+e = GenError(n)
 ```
 
 Generate the public key.
@@ -57,9 +57,9 @@ m = polynomial( coef=c(1, 1, 1) )
 Create polynomials for the encryption
 ```{r}
 # polynomials for encryption
-e1 = polynomial( coef=c( 6, -1,  3,  3, 9,  0, 3, -3, -5, 0, -7, 1, -5, 0, 4, 1) )
-e2 = polynomial( coef=c(-5, -3, -1, -1, 1, -7, 2,  0,  2, 0, -2, 6,  0, 1, 0, 1) )
-u  = polynomial( coef=c( 1, -1,  1, -1, 1,  1, 0,  0, -1, 0,  1, 1,  0, 1) )
+e1 = GenError(n)
+e2 = GenError(n)
+u  = GenU(n)
 ```
 
 Generate the ciphertext
@@ -84,3 +84,4 @@ Round (remove the error) then mod p
 decrypt = CoefMod(round(decrypt), p)
 print(decrypt)
 ```
+
