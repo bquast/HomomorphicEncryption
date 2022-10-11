@@ -1,3 +1,29 @@
+#' @name GenPolyMod
+#' @title Generate Polynomial Modulo
+#' @param n the order
+#' @return polynomial of the form x^^n + 1
+#' @import polynom
+#' @export
+GenPolyMod <- function(n)
+  polynomial( coef=c(1, rep(0, n-1), 1 ) )
+
+
+#' @name CoefMod
+#' @title Coefficient Modulo
+#' @param x polynomial from the polynom package
+#' @param k the modulo
+#' @return polynomial of the polynom class
+#' @import polynom
+#' @export
+#' @examples
+#' polynomial = polynomial(c(5, 3, 6))
+#' print(polynomial)
+#'
+#' CoefMod(polynomial, 5)
+CoefMod <- function(x, k)
+  polynom::polynomial(as.vector(x)%%k)
+
+
 #' @name GenSecretkey
 #' @title Generate Secret key
 #' @param n the order
@@ -21,9 +47,10 @@ GenA <- function(n, q)
 #' @title Generate a
 #' @param n the order
 #' @return polynomial of order x^^n with discrete Gaussian distribution, bounded (not strictly true) by -n,n
+#' @import stats
 #' @export
 GenError <- function(n)
-  polynomial( coef=round(rnorm(n, 0, n/3)) )
+  polynomial( coef=round(stats::rnorm(n, 0, n/3)) )
 
 #' @name GenU
 #' @title Generate u
@@ -47,7 +74,7 @@ GenU <- function(n) {
 GenPubKey0 <- function(a, s, e, pm, q) {
   temp = -(a*s + e) # e should be generated in here, not fed into it
   temp = temp %% pm
-  temp = HEtools::CoefMod(temp, q)
+  temp = CoefMod(temp, q)
   return(temp)
 }
 
@@ -88,7 +115,7 @@ GenPubKey <- function(a, n, e, pm) {
 EncryptPoly0 <- function(m, pk0, u, e1, p, pm, q) {
   temp = pk0 * u + e1 + floor(q/p) * m
   temp = temp %% pm
-  temp = HEtools::CoefMod(temp, q)
+  temp = CoefMod(temp, q)
   return(temp)
 }
 
@@ -104,7 +131,6 @@ EncryptPoly0 <- function(m, pk0, u, e1, p, pm, q) {
 EncryptPoly1 <- function(pk1, u, e2, pm, q) {
   temp = pk1 * u + e2
   temp = temp %% pm
-  temp = HEtools::CoefMod(temp, q)
+  temp = CoefMod(temp, q)
   return(temp)
 }
-
