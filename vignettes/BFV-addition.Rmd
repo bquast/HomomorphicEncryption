@@ -1,8 +1,8 @@
 ---
-title: "BFV"
+title: "BFV-addition"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{BFV}
+  %\VignetteIndexEntry{BFV-addition}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -23,10 +23,10 @@ library(polynom)
 
 Set some parameters.
 ```{r params}
-d  =   4
-n  =   2^d
-p  =   (n/2)-1
-q  = 874
+d  =      4
+n  =      2^d
+p  =     (n/2)-1
+q  = 424242
 pm = HEtools::GenPolyMod(n)
 ```
 
@@ -54,12 +54,6 @@ pk0 = GenPubKey0(a, s, e, pm, q)
 pk1 = GenPubKey1(a)
 ```
 
-Create a polynomial message
-```{r}
-# create a message
-m = polynomial( coef=c(1, 1, 1) )
-```
-
 Create polynomials for the encryption
 ```{r}
 # polynomials for encryption
@@ -68,24 +62,41 @@ e2 = GenError(n)
 u  = GenU(n)
 ```
 
-Generate the ciphertext
+Now create to messages to add.
 ```{r}
-ct0 = EncryptPoly0(m, pk0, u, e1, p, pm, q)
-ct1 = EncryptPoly1(   pk1, u, e2,    pm, q)
+m1 = polynomial(c(1, 1, 1))
+m2 = polynomial(c(0, 1   ))
 ```
 
-Decrypt
 ```{r}
-decrypt = (ct1 * s) + ct0
+m1_ct0 = EncryptPoly0(m1, pk0, u, e1, p, pm, q)
+m1_ct1 = EncryptPoly1(    pk1, u, e2,    pm, q)
+m2_ct0 = EncryptPoly0(m2, pk0, u, e1, p, pm, q)
+m2_ct1 = EncryptPoly1(    pk1, u, e2,    pm, q)
+```
+
+Sum
+```{r}
+sum_ct0 = m1_ct0 + m2_ct0
+sum_ct1 = m1_ct1 + m2_ct1
+
+sum_ct0 = sum_ct0 %% pm
+sum_ct0 = CoefMod(sum_ct0, q)
+
+sum_ct1 = sum_ct1 %% pm
+sum_ct1 = CoefMod(sum_ct1, q)
+```
+
+
+Decrypt the sum
+```{r}
+decrypt = (sum_ct1 * s) + sum_ct0
 decrypt = decrypt %% pm
 decrypt = CoefMod(decrypt, q)
 
 # rescale
 decrypt = decrypt * p/q
-```
 
-Round (remove the error) then mod p
-```{r}
 # round then mod p
 decrypt = CoefMod(round(decrypt), p)
 print(decrypt)
