@@ -2,8 +2,8 @@ Package: HomomorphicEncryption
 Title: BFV Schema for Fully Homomorphic Encryption
 Version: 0.0.1
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+    person("Bastiaan", "Quast", , "bquast@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-2951-3577"))
 Description: Implements the BFV schema for Fully Homomorphic Encryption, as well as several helper functions.
 License: GPL (>= 3)
 Encoding: UTF-8
