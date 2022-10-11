@@ -2,7 +2,11 @@
 
 export(EncryptPoly0)
 export(EncryptPoly1)
+export(GenA)
+export(GenError)
 export(GenPolyMod)
 export(GenPubKey)
 export(GenPubKey0)
 export(GenPubKey1)
+export(GenSecretKey)
+export(GenU)

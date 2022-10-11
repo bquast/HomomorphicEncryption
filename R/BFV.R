@@ -6,6 +6,42 @@
 GenPolyMod <- function(n)
   polynomial( coef=c(1, rep(0, n-1), 1 ) )
 
+#' @name GenSecretkey
+#' @title Generate Secret key
+#' @param n the order
+#' @return polynomial of order x^^n with coefficients (-1,-,1)
+#' @export
+GenSecretKey <- function(n) {
+  coefs = sample.int(3, n, replace=TRUE)-2
+  polynomial( coef=coefs )
+}
+
+#' @name GenA
+#' @title Generate a
+#' @param n the order
+#' @param q the ciphermod of coefficients
+#' @return polynomial of order x^^n with coefficients 0,..,q
+#' @export
+GenA <- function(n, q)
+  polynomial(sample.int(q, n, replace=TRUE))
+
+#' @name GenError
+#' @title Generate a
+#' @param n the order
+#' @return polynomial of order x^^n with discrete Gaussian distribution, bounded (not strictly true) by -n,n
+#' @export
+GenError <- function(n)
+  polynomial( coef=round(rnorm(n, 0, n/3)) )
+
+#' @name GenU
+#' @title Generate u
+#' @param n the order
+#' @return polynomial of order x^^n-1 with coefficients (-1,-,1)
+#' @export
+GenU <- function(n) {
+  coefs = sample.int(3, (n-1), replace=TRUE)-2
+  polynomial( coef=coefs )
+}
 
 #' @name GenPubKey0
 #' @title Generate part 0 of the Public Key
