@@ -1,8 +1,8 @@
 ---
-title: "BFV"
+title: "CKKS"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{BFV}
+  %\VignetteIndexEntry{CKKS}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

@@ -1,8 +1,8 @@
 ---
-title: "BGV"
+title: "BGV-multiply"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{BGV}
+  %\VignetteIndexEntry{BGV-multiply}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
