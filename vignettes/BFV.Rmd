@@ -16,8 +16,8 @@ knitr::opts_chunk$set(
 
 Load libraries that will be used.
 ```{r setup}
-library(HomomorphicEncryption)
 library(polynom)
+library(HomomorphicEncryption)
 ```
 
 Set some parameters.
