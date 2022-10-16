@@ -3,7 +3,6 @@
 #' @export
 
 BFV_KeyGen <- function() {
-  sk <- list()
   pk <- list()
   d <-readline('What will be value of d? (leave blank for auto-generated) ')
   d <- as.integer(d)
@@ -17,15 +16,14 @@ BFV_KeyGen <- function() {
   if ( is.null(q) )
     q <- 874L # generate it
   # generate a secret key
-  s = GenSecretKey(n)
-  sk$s <- s
+  sk = GenSecretKey(n)
   # generate a
   a = GenA(n, q)
   # generate the error
   e = GenError(n) # this should be generated only within the GenPubKey
   # so that it is never stored anywhere
   # generate the public key
-  pk$pk0 = GenPubKey0(a, s, e, pm, q)
+  pk$pk0 = GenPubKey0(a, sk, e, pm, q)
   pk$pk1 = GenPubKey1(a)
 
   print(c("The public key is: ", pk) )
