@@ -43,7 +43,7 @@ s = GenSecretKey(n)
 a = GenA(n, q)
 
 # generate the error
-e = GenError(n)
+e = 0 # GenError(n)
 ```
 
 Generate the public key.
@@ -55,14 +55,14 @@ pk1 = GenPubKey1(a)
 Create a polynomial message
 ```{r}
 # create a message
-m = polynomial( coef=c(1, 1, 1) )
+m = polynomial( coef=c(400, 400, 400) )
 ```
 
 Create polynomials for the encryption
 ```{r}
 # polynomials for encryption
-e1 = GenError(n)
-e2 = GenError(n)
+e1 = 0 # GenError(n)
+e2 = 0 # GenError(n)
 u  = GenU(n)
 ```
 
