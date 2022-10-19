@@ -6,6 +6,14 @@
 \usage{
 BFV_encrypt(m, pk)
 }
+\arguments{
+\item{m}{message}
+
+\item{pk}{public key}
+}
+\value{
+polynomial
+}
 \description{
 BFV encryption
 }

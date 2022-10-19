@@ -6,6 +6,9 @@
 \usage{
 BFV_KeyGen()
 }
+\value{
+polynomial
+}
 \description{
 Brakerski / Fan-Vercauteren
 }

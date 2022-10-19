@@ -1,5 +1,6 @@
 #' @name BFV_KeyGen
 #' @title Brakerski / Fan-Vercauteren
+#' @return polynomial
 #' @export
 
 BFV_KeyGen <- function() {
@@ -32,6 +33,9 @@ BFV_KeyGen <- function() {
 
 #' @name BFV_encrypt
 #' @title BFV encryption
+#' @param m message
+#' @param pk public key
+#' @return polynomial
 #' @export
 BFV_encrypt <- function(m, pk) {
   # recover n and pm
