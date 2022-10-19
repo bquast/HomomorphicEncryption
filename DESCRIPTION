@@ -1,10 +1,10 @@
 Package: HomomorphicEncryption
-Title: BFV Schema for Fully Homomorphic Encryption
+Title: BFV, BGV, CKKS Schema for Fully Homomorphic Encryption
 Version: 0.0.1
 Authors@R: 
     person("Bastiaan", "Quast", , "bquast@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-2951-3577"))
-Description: Implements the BFV schema for Fully Homomorphic Encryption, as well as several helper functions.
+Description: Implements the Brakerski-Fan-Vercauteren (2012) <https://eprint.iacr.org/2012/144>, Brakerski-Gentry-Vaikuntanathan (2014) <doi:10.1145/2633600>, and Cheon-Kim-Kim-Song (2016) <https://eprint.iacr.org/2016/421.pdf> schema for Fully Homomorphic Encryption, as well as several helper functions.
 License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
