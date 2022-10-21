@@ -23,3 +23,5 @@ Possibly misspelled words in DESCRIPTION:
   Vercauteren (7:43)
   
 None of these are misspelled words (names, abbreviations, and proper nouns).
+
+added examples and automatic tests
