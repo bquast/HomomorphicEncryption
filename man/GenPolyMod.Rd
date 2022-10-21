@@ -15,3 +15,7 @@ polynomial of the form x^^n + 1
 \description{
 Generate Polynomial Modulo
 }
+\examples{
+n = 16
+GenPolyMod(n)
+}

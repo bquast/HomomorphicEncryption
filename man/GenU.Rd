@@ -15,3 +15,7 @@ polynomial of order x^^n-1 with coefficients (-1,-,1)
 \description{
 Generate u
 }
+\examples{
+n = 16
+GenU
+}

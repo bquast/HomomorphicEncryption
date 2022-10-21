@@ -4,6 +4,9 @@
 #' @return polynomial of the form x^^n + 1
 #' @import polynom
 #' @export
+#' @examples
+#' n = 16
+#' GenPolyMod(n)
 GenPolyMod <- function(n)
   polynomial( coef=c(1, rep(0, n-1), 1 ) )
 
@@ -29,6 +32,9 @@ CoefMod <- function(x, k)
 #' @param n the order
 #' @return polynomial of order x^^n with coefficients (-1,-,1)
 #' @export
+#' @examples
+#' n = 16
+#' GenSecretkey(n)
 GenSecretKey <- function(n) {
   coefs = sample.int(3, n, replace=TRUE)-2
   polynomial( coef=coefs )
@@ -40,6 +46,10 @@ GenSecretKey <- function(n) {
 #' @param q the ciphermod of coefficients
 #' @return polynomial of order x^^n with coefficients 0,..,q
 #' @export
+#' @examples
+#' n = 16
+#' q =  7
+#' GenA(n, q)
 GenA <- function(n, q)
   polynomial(sample.int(q, n, replace=TRUE))
 
@@ -49,6 +59,9 @@ GenA <- function(n, q)
 #' @return polynomial of order x^^n with discrete Gaussian distribution, bounded (not strictly true) by -n,n
 #' @import stats
 #' @export
+#' @examples
+#' n = 16
+#' GenError(n)
 GenError <- function(n)
   polynomial( coef=round(stats::rnorm(n, 0, n/3)) )
 
@@ -57,6 +70,9 @@ GenError <- function(n)
 #' @param n the order
 #' @return polynomial of order x^^n-1 with coefficients (-1,-,1)
 #' @export
+#' @examples
+#' n = 16
+#' GenU
 GenU <- function(n) {
   coefs = sample.int(3, (n-1), replace=TRUE)-2
   polynomial( coef=coefs )

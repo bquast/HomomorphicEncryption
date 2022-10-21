@@ -15,3 +15,7 @@ polynomial of order x^^n with discrete Gaussian distribution, bounded (not stric
 \description{
 Generate a
 }
+\examples{
+n = 16
+GenError(n)
+}

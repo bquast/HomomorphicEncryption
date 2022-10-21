@@ -17,3 +17,8 @@ polynomial of order x^^n with coefficients 0,..,q
 \description{
 Generate a
 }
+\examples{
+n = 16
+q =  7
+GenA(n, q)
+}

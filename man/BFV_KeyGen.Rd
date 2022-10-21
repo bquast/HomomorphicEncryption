@@ -12,3 +12,10 @@ polynomial
 \description{
 Brakerski / Fan-Vercauteren
 }
+\examples{
+d  =      4
+n  =      2^d
+p  =     (n/2)-1
+q  = 424242
+GenPolyMod(n)
+}

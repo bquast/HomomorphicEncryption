@@ -16,3 +16,7 @@ polynomial of order x^^n with coefficients (-1,-,1)
 \description{
 Generate Secret key
 }
+\examples{
+n = 16
+GenSecretkey(n)
+}
