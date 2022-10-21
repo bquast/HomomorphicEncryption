@@ -36,5 +36,6 @@ decrypt = decrypt * p/q
 
 decrypt = CoefMod(round(decrypt), p)
 
-
-equals(as.vector(decrypt)[1] == 4)
+test_that("multiplication works", {
+  expect_equal(as.vector(decrypt)[1], 4)
+})
