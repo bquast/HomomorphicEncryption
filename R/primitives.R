@@ -34,7 +34,7 @@ CoefMod <- function(x, k)
 #' @export
 #' @examples
 #' n = 16
-#' GenSecretkey(n)
+#' GenSecretKey(n)
 GenSecretKey <- function(n) {
   coefs = sample.int(3, n, replace=TRUE)-2
   polynomial( coef=coefs )

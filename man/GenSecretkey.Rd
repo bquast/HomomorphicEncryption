@@ -18,5 +18,5 @@ Generate Secret key
 }
 \examples{
 n = 16
-GenSecretkey(n)
+GenSecretKey(n)
 }
