@@ -2,7 +2,7 @@
 
 
 ## Installation
-`HomomorphicEncryption` can be installed from [CRAN(https://CRAN.R-project.org/package=HomomorphicEncryption) using:
+`HomomorphicEncryption` can be installed from [CRAN](https://CRAN.R-project.org/package=HomomorphicEncryption) using:
 ```
 install.packages('HomomorphicEncryption')
 ```
