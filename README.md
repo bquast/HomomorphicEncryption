@@ -2,8 +2,14 @@
 
 
 ## Installation
+`HomomorphicEncryption` can be installed from [CRAN(https://CRAN.R-project.org/package=HomomorphicEncryption) using:
+```
+install.packages('HomomorphicEncryption')
+```
 
-You can install the development version of HomomorphicEncryption from [GitHub](https://github.com/bquast/HomomorphicEncryption) with:
+## Development version
+
+You can install the development version of `HomomorphicEncryption` from [GitHub](https://github.com/bquast/HomomorphicEncryption) with:
 
 ``` r
 if (!require('remotes')) install.packages('remotes')
