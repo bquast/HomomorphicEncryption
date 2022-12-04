@@ -31,7 +31,7 @@ Set some parameters.
 d  =      4     # n and d need to be renamed throughout the package
 n  =      2^d
 p  =      11
-q  =  p * 60606
+q  =  p * 15000
 pm = GenPolyMod(n)
 ```
 
