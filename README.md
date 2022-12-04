@@ -1,5 +1,7 @@
 # HomomorphicEncryption
-
+<!-- badges: start -->
+  [![CRAN status](https://www.r-pkg.org/badges/version/HomomorphicEncryption)](https://CRAN.R-project.org/package=HomomorphicEncryption)
+  <!-- badges: end -->
 
 ## Installation
 `HomomorphicEncryption` can be installed from [CRAN](https://CRAN.R-project.org/package=HomomorphicEncryption) using:
