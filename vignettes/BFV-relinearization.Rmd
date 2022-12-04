@@ -49,7 +49,7 @@ s = GenSecretKey(n)
 a = GenA(n, q)
 
 # generate the error
-e = 0 # GenError(n) # this needs to be zeroed or the errors become too large - better yet, increase q and p
+e = GenError(n/10) # need to figure out how this division can be removed, by scaling q/p
 ```
 
 Generate the public key.
