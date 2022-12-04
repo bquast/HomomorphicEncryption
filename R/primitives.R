@@ -100,6 +100,19 @@ GenPubKey0 <- function(a, s, e, pm, q) {
 GenPubKey1 <- function(a)
   return(a)
 
+#' @name GenEvalKey0
+#' @title Generate the Evaluation Key
+#' @param a a
+#' @param s s
+#' @param e e
+#' @param pm pm
+#' @param q q
+#' @return polynomial
+#' @export
+GenEvalKey0 <- function(a, s, e)
+  -(a*s + e) + s^2
+
+
 #' @name GenPubKey
 #' @title Generate the Public Key
 #' @param a a
