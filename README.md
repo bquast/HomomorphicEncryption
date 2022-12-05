@@ -40,7 +40,7 @@ vignette(package='HomomorphicEncryption')
 
 ## Additional Information
 
-An overview of the changes is available in the NEWS file.
+An overview of the changes is available in the [NEWS.md](/NEWS.md) file.
 
 ```r
 news(package='rnn')
