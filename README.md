@@ -3,6 +3,7 @@
   [![License](https://img.shields.io/badge/license-GPLv3-brightgreen.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
   [![CRAN status](https://www.r-pkg.org/badges/version/HomomorphicEncryption)](https://CRAN.R-project.org/package=HomomorphicEncryption)
   [![R build status](https://github.com/bquast/HomomorphicEncryption/workflows/R-CMD-check/badge.svg)](https://github.com/bquast/HomomorphicEncryption/actions?workflow=R-CMD-check)
+  [![codecov](https://codecov.io/gh/bquast/HomomorphicEncryption/branch/main/graph/badge.svg?token=uVTGMofPjO)](https://codecov.io/gh/bquast/HomomorphicEncryption)
   <!-- badges: end -->
 
 ## Installation
