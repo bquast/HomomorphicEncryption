@@ -2,8 +2,8 @@
 <!-- badges: start -->
   [![License](https://img.shields.io/badge/license-GPLv3-brightgreen.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
   [![CRAN status](https://www.r-pkg.org/badges/version/HomomorphicEncryption)](https://CRAN.R-project.org/package=HomomorphicEncryption)
-[![Total RStudio Cloud Downloads](https://cranlogs.r-pkg.org/badges/grand-total/rnn?color=brightgreen)](https://cran.r-project.org/package=rnn)
-[![RStudio Cloud Downloads](https://cranlogs.r-pkg.org/badges/rnn?color=brightgreen)](https://cran.r-project.org/package=rnn)
+[![Total RStudio Cloud Downloads](https://cranlogs.r-pkg.org/badges/grand-total/homomorphicencryption?color=brightgreen)](https://cran.r-project.org/package=homomorphicencryption)
+[![RStudio Cloud Downloads](https://cranlogs.r-pkg.org/badges/homomorphicencryption?color=brightgreen)](https://cran.r-project.org/package=homomorphicencryption)
   <!-- badges: end -->
 
 ## Installation
