@@ -105,8 +105,6 @@ GenPubKey1 <- function(a)
 #' @param a a
 #' @param s s
 #' @param e e
-#' @param pm pm
-#' @param q q
 #' @return polynomial
 #' @export
 GenEvalKey0 <- function(a, s, e)

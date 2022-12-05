@@ -12,10 +12,6 @@ GenEvalKey0(a, s, e)
 \item{s}{s}
 
 \item{e}{e}
-
-\item{pm}{pm}
-
-\item{q}{q}
 }
 \value{
 polynomial
