@@ -3,7 +3,7 @@
   [![License](https://img.shields.io/badge/license-GPLv3-brightgreen.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
   [![CRAN status](https://www.r-pkg.org/badges/version/HomomorphicEncryption)](https://CRAN.R-project.org/package=HomomorphicEncryption)
   [![R build status](https://github.com/bquast/HomomorphicEncryption/workflows/R-CMD-check/badge.svg)](https://github.com/bquast/HomomorphicEncryption/actions?workflow=R-CMD-check)
-  [![codecov](https://app.codecov.io/gh/bquast/HomomorphicEncryption/branch/main/graph/badge.svg?token=uVTGMofPjO)](https://codecov.io/gh/bquast/HomomorphicEncryption)
+  [![Codecov test coverage](https://codecov.io/gh/bquast/HomomorphicEncryption/branch/main/graph/badge.svg)](https://app.codecov.io/gh/bquast/HomomorphicEncryption?branch=main)
   [![Total RStudio Cloud Downloads](https://cranlogs.r-pkg.org/badges/grand-total/HomomorphicEncryption?color=brightgreen)](https://cran.r-project.org/package=HomomorphicEncryption)
 [![RStudio Cloud Downloads](https://cranlogs.r-pkg.org/badges/HomomorphicEncryption?color=brightgreen)](https://cran.r-project.org/package=HomomorphicEncryption)
   <!-- badges: end -->
