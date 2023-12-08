@@ -3,14 +3,6 @@
 #' @param n the order
 #' @return polynomial of the form x^^n + 1
 #' @import polynom
-#' @export
-#' @examples
-#' n = 16
-#' GenPolyMod(n)
-GenPolyMod <- function(n)
-  polynomial( coef=c(1, rep(0, n-1), 1 ) )
-
-
 #' @importFrom HEtools CoefMod
 #' @export
 HEtools::CoefMod

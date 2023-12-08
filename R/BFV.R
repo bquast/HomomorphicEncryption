@@ -17,7 +17,7 @@ BFV_KeyGen <- function() {
     d <- 4L # generate it
   n <- 2^d
   p <- (n/2)-1
-  pm = GenPolyMod(n)
+  pm = HEtools::GenPolyMod(n)
   q <-readline('What will be value of q? (leave blank for auto-generated) ')
   q <- as.integer(q)
   if ( is.null(q) )
@@ -47,7 +47,7 @@ BFV_encrypt <- function(m, pk) {
   # recover n and pm
   n <- length(pk$pk0)
   p  =   (n/2)-1
-  pm = GenPolyMod(n)
+  pm = HEtools::GenPolyMod(n)
 
   e1 = GenError(n) # should be in ct0 generation
   e2 = GenError(n) # should be in ct1 generation

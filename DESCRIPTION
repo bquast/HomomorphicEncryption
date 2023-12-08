@@ -1,6 +1,6 @@
 Package: HomomorphicEncryption
 Title: BFV, BGV, CKKS Schema for Fully Homomorphic Encryption
-Version: 0.2.0
+Version: 0.3.0
 Authors@R: 
     person("Bastiaan", "Quast", , "bquast@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-2951-3577"))
