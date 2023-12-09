@@ -16,7 +16,7 @@ b = GenU(n)
 # generate the error
 e = GenError(n)
 
-GenPubKey(a,n,e,pm)
+GenPubKey(a,n,e,pm,q)
 
 pk0 = GenPubKey0(a, s, e, pm, q)
 pk1 = GenPubKey1(a)
