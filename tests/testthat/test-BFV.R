@@ -11,6 +11,7 @@ s = GenSecretKey(n)
 
 # generate a
 a = GenA(n, q)
+b = GenU(n)
 
 # generate the error
 e = GenError(n)
