@@ -9,19 +9,13 @@
 #' q  = 424242
 #' GenPolyMod(n)
 
-BFV_KeyGen <- function() {
+BFV_KeyGen <- function(d=4,q=424242) {
   pk <- list()
-  d <-readline('What will be value of d? (leave blank for auto-generated) ')
   d <- as.integer(d)
-  if  (is.null(d) )
-    d <- 4L # generate it
   n <- 2^d
   p <- (n/2)-1
   pm = HEtools::GenPolyMod(n)
-  q <-readline('What will be value of q? (leave blank for auto-generated) ')
   q <- as.integer(q)
-  if ( is.null(q) )
-    q <- 874L # generate it
   # generate a secret key
   sk = GenSecretKey(n)
   # generate a
@@ -32,9 +26,7 @@ BFV_KeyGen <- function() {
   # generate the public key
   pk$pk0 = GenPubKey0(a, sk, e, pm, q)
   pk$pk1 = GenPubKey1(a)
-
-  print(c("The public key is: ", pk) )
-  return(list(pk=pk,sk=sk))
+  return(invisible(list(pk=pk,sk=sk)))
 }
 
 #' @name BFV_encrypt
