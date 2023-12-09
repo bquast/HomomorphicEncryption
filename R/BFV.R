@@ -1,5 +1,7 @@
 #' @name BFV_KeyGen
 #' @title Brakerski / Fan-Vercauteren
+#' @param d the d input
+#' @param q the q input
 #' @return polynomial
 #' @export
 #' @examples
