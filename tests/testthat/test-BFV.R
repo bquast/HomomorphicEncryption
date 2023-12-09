@@ -41,5 +41,6 @@ test_that("multiplication works", {
 })
 
 set.seed(123)
-expect_equal(sum(BFV_KeyGen()$pk$pk0[]),3939566)
-
+a <- BFV_KeyGen()
+expect_equal(sum(a$pk$pk0[]),3939566)
+expect_equal(sum(BFV_encrypt(15,a$pk)$ct0[]),4953)
