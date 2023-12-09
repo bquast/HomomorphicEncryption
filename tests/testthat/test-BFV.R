@@ -11,7 +11,6 @@ s = GenSecretKey(n)
 
 # generate a
 a = GenA(n, q)
-b = GenU(n)
 
 # generate the error
 e = GenError(n)
@@ -25,6 +24,7 @@ m = polynomial( coef=c(300, 400, 500) )
 
 e1 = GenError(n)
 e2 = GenError(n)
+u = GenU(n)
 
 ct0 = EncryptPoly0(m, pk0, u, e1, p, pm, q)
 ct1 = EncryptPoly1(   pk1, u, e2,    pm, q)
