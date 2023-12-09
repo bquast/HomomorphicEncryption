@@ -39,3 +39,7 @@ decrypt = CoefMod(round(decrypt), p)
 test_that("multiplication works", {
   expect_equal(as.vector(decrypt)[1], 4)
 })
+
+set.seed(123)
+expect_equal(sum(BFV_KeyGen()$pk$pk0[]),3939566)
+
