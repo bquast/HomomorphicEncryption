@@ -97,11 +97,12 @@ GenEvalKey0 <- function(a, s, e)
 #' @param n n
 #' @param e e
 #' @param pm pm
+#' @param q q
 #' @return list with the two polynomials that form the public key
 #' @export
-GenPubKey <- function(a, n, e, pm) {
+GenPubKey <- function(a, n, e, pm, q) {
   temp     = list()
-  temp$pk0 = GenPubKey0(a, n, e, pm)
+  temp$pk0 = GenPubKey0(a, n, e, pm, q)
   temp$pk1 = GenPubKey1(a          )
   return(temp)
 }
