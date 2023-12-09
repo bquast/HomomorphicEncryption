@@ -47,7 +47,7 @@ BFV_encrypt <- function(m, pk) {
 
   ct0 = EncryptPoly0(m, pk$pk0, u, e1, p, pm, 874)
   ct1 = EncryptPoly1(   pk$pk1, u, e2,    pm, 874)
-  return(list(ct0=ct0,ct1=ct1))
+  return(invisible(list(ct0=ct0,ct1=ct1)))
 }
 
 
