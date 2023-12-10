@@ -47,7 +47,7 @@ vignette(package='HomomorphicEncryption')
 An overview of the changes is available in the [NEWS.md](/NEWS.md) file.
 
 ```r
-news(package='rnn')
+news(package='HomomorphicEncryption')
 ```
 
 ## Development
