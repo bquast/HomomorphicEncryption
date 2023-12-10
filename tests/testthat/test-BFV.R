@@ -36,7 +36,7 @@ decrypt = CoefMod(decrypt, q)
 # rescale
 decrypt = decrypt * p/q
 
-decrypt = CoefMod(round(decrypt), p)
+decrypt = HEtools::CoefMod(round(decrypt), p)
 
 test_that("multiplication works", {
   expect_equal(as.vector(decrypt)[1], 4)
