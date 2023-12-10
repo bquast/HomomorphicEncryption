@@ -17,6 +17,8 @@ e = GenError(n)
 
 GenPubKey(a,n,e,pm,q)
 
+GenEvalKey0(a,s,e)
+
 pk0 = GenPubKey0(a, s, e, pm, q)
 pk1 = GenPubKey1(a)
 
