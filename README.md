@@ -27,7 +27,7 @@ remotes::install_github('bquast/HomomorphicEncryption', build_vignettes=TRUE)
 Following installation, the package can be loaded using:
 
 ```r
-library(rnn)
+library(HomomorphicEncryption)
 ```
 
 For general information on using the package, please refer to the help files.
