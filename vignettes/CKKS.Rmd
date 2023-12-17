@@ -48,7 +48,7 @@ e = GenError(n)
 
 Generate the public key.
 ```{r}
-pk0 = CoefMod((-a*s + e) %% pm, q)
+pk0 = GenPubKey0(a, s, e, pm, q)
 pk1 = GenPubKey1(a)
 ```
 
@@ -68,7 +68,7 @@ u  = GenU(n)
 
 Generate the ciphertext
 ```{r}
-ct0 = CoefMod((pk0 * u + e1 + m) %% pm, q)
+ct0 = EncryptPoly0(m, pk0, u, e1, p, pm, q)
 ct1 = EncryptPoly1(pk1, u, e2, pm, q)
 ```
 
@@ -77,5 +77,11 @@ Decrypt
 decrypt = (ct1 * s) + ct0
 decrypt = decrypt %% pm
 decrypt = CoefMod(decrypt, q)
+print(decrypt)
+# rescale
+decrypt = decrypt * p/q
+print(decrypt)
+# round then mod p
+decrypt = CoefMod(round(decrypt), p)
 print(decrypt)
 ```
