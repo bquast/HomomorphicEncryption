@@ -2,7 +2,7 @@
 title: "CKKS encode"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{CKKS}
+  %\VignetteIndexEntry{CKKS encode}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
