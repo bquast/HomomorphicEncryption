@@ -43,7 +43,12 @@ print(z)
 Now we encode the vector of complex numbers to a polynomial.
 
 ```{r encode}
-p <- encode(xi, M, scale, z)
+pi_z <- pi_inverse(z)
+scaled_pi_z <- scale * pi_z
+rounded_scale_pi_zi <- sigma_R_discretization(xi, M, scaled_pi_z)
+p <- sigma_inverse(xi, M, rounded_scale_pi_zi)
+coef <- as.vector(round(Re(p)))
+p <- polynomial(coef)
 ```
 
 Let's view the result.
@@ -55,7 +60,9 @@ print(p)
 Let's decode to obtain the original number:
 
 ```{r decode}
-decoded_z <- decode(xi, M, scale, p)
+rescaled_p <- coef(p) / scale
+z <- sigma(xi, M, rescaled_p)
+decoded_z <-pi_function(M, z)
 print(decoded_z)
 ```
 
