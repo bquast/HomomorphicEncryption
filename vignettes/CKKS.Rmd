@@ -55,7 +55,7 @@ pk1 = GenPubKey1(a)
 Create a polynomial message
 ```{r}
 # create a message
-m = polynomial( coef=c(5, 6, 3) )
+m = polynomial( coef=c(500, 600, 100) )
 ```
 
 Create polynomials for the encryption
@@ -68,7 +68,7 @@ u  = GenU(n)
 
 Generate the ciphertext
 ```{r}
-ct0 = EncryptPoly0(m, pk0, u, e1, p, pm, q)
+ct0 = CoefMod((pk0*u + e1 + m) %% pm, q)
 ct1 = EncryptPoly1(pk1, u, e2, pm, q)
 ```
 
@@ -77,11 +77,5 @@ Decrypt
 decrypt = (ct1 * s) + ct0
 decrypt = decrypt %% pm
 decrypt = CoefMod(decrypt, q)
-print(decrypt)
-# rescale
-decrypt = decrypt * p/q
-print(decrypt)
-# round then mod p
-decrypt = CoefMod(round(decrypt), p)
-print(decrypt)
+print(decrypt[1:length(coef(m))])
 ```
