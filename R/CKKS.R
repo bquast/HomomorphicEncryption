@@ -33,13 +33,13 @@ sigma_inverse <- function(xi, M, b) {
 }
 
 #' Sigma
-#' @title sigma
+#' @title sigma function
 #' @param xi xi
 #' @param M M
 #' @param p p
 #' @return sigma of xi
 #' @export
-sigma <- function(xi, M, p) {
+sigma_function <- function(xi, M, p) {
   outputs <- numeric(N)
   N <- M %/% 2
   for (i in 1:N) {
@@ -147,6 +147,6 @@ encode <- function(xi, M, scale, z) {
 #' @export
 decode <- function(xi, M, scale, p) {
   rescaled_p <- coef(p) / scale
-  z <- sigma(xi, M, rescaled_p)
+  z <- sigma_function(xi, M, rescaled_p)
   return(pi_function(M, z))
 }
