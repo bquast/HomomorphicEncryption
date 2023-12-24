@@ -59,7 +59,7 @@ decoded_z <- decode(xi, M, scale, p)
 print(decoded_z)
 ```
 
-The decoded z is indeed very close to the orignal z, we round the result to make the clearer.
+The decoded z is indeed very close to the original z, we round the result to make the clearer.
 
 ```{r round}
 round(decoded_z)
