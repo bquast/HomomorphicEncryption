@@ -53,7 +53,7 @@ print(m)
 ```
 
 Set some parameters.
-```{r params}
+```{r params2}
 d  =   4
 n  =   2^d
 p  =   (n/2)-1
@@ -62,7 +62,7 @@ pm = GenPolyMod(n)
 ```
 
 Create the secret key and the polynomials a and e, which will go into the public key
-```{r}
+```{r seckey}
 # generate a secret key
 s = GenSecretKey(n)
 
@@ -74,7 +74,7 @@ e = GenError(n)
 ```
 
 Generate the public key.
-```{r}
+```{r pubkey}
 pk0 = GenPubKey0(a, s, e, pm, q)
 pk1 = GenPubKey1(a)
 ```
