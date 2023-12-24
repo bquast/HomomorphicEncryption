@@ -48,7 +48,7 @@ e = GenError(n)
 
 Generate the public key.
 ```{r}
-pk0 = GenPubKey0(a, s, e, pm, 1)
+pk0 = GenPubKey0(a, s, e, pm, q)
 pk1 = GenPubKey1(a)
 ```
 
