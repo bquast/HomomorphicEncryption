@@ -29,7 +29,7 @@ Set some parameters.
 ```{r params}
 M <- 8
 N <- M / 2
-scale <- 4
+scale <- 84
 xi <- complex(real = cos(2 * pi / M), imaginary = sin(2 * pi / M))
 ```
 
