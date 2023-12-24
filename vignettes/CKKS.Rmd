@@ -55,7 +55,7 @@ pk1 = GenPubKey1(a)
 Create a polynomial message
 ```{r}
 # create a message
-m = polynomial( coef=c(25, 25, 25) )
+m = polynomial( coef=c(5, 6, 3) )
 ```
 
 Create polynomials for the encryption
