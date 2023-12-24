@@ -1,0 +1,116 @@
+---
+title: "CKKS encode encrypt"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{CKKS encode encrypt}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+Load libraries that will be used.
+```{r setup}
+library(polynom)
+library(HomomorphicEncryption)
+```
+
+Set a working seed for random numbers (so that random numbers can be replicated exactly).
+```{r seed}
+set.seed(123)
+```
+
+Set some parameters.
+```{r params}
+M <- 8
+N <- M / 2
+scale <- 84
+xi <- complex(real = cos(2 * pi / M), imaginary = sin(2 * pi / M))
+```
+
+Create the (complex) numbers we will encode.
+
+```{r z}
+z <- c(complex(real=3, imaginary=4), complex(real=2, imaginary=-1))
+print(z)
+```
+
+Now we encode the vector of complex numbers to a polynomial.
+
+```{r encode}
+m <- encode(xi, M, scale, z)
+```
+
+Let's view the result.
+
+```{r print-p}
+print(m)
+```
+
+Set some parameters.
+```{r params}
+d  =   4
+n  =   2^d
+p  =   (n/2)-1
+q  = 874
+pm = GenPolyMod(n)
+```
+
+Create the secret key and the polynomials a and e, which will go into the public key
+```{r}
+# generate a secret key
+s = GenSecretKey(n)
+
+# generate a
+a = GenA(n, q)
+
+# generate the error
+e = GenError(n)
+```
+
+Generate the public key.
+```{r}
+pk0 = GenPubKey0(a, s, e, pm, q)
+pk1 = GenPubKey1(a)
+```
+
+Create polynomials for the encryption
+```{r}
+# polynomials for encryption
+e1 = GenError(n)
+e2 = GenError(n)
+u  = GenU(n)
+```
+
+Generate the ciphertext
+```{r}
+ct0 = CoefMod((pk0*u + e1 + m) %% pm, q)
+ct1 = EncryptPoly1(pk1, u, e2, pm, q)
+```
+
+Decrypt
+```{r}
+decrypt = (ct1 * s) + ct0
+decrypt = decrypt %% pm
+decrypt = CoefMod(decrypt, q)
+print(decrypt[1:length(coef(m))])
+```
+
+
+Let's decode to obtain the original number:
+
+```{r decode}
+decoded_z <- decode(xi, M, scale, m)
+print(decoded_z)
+```
+
+The decoded z is indeed very close to the orignal z, we round the result to make the clearer.
+
+```{r round}
+round(decoded_z)
+```
