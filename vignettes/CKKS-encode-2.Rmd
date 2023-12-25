@@ -1,8 +1,8 @@
 ---
-title: "CKKS encode 2"
+title: "CKKS encode 3"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{CKKS encode 2}
+  %\VignetteIndexEntry{CKKS encode 3}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -27,10 +27,10 @@ set.seed(123)
 
 Set some parameters.
 ```{r params}
-M <- 8
-N <- M / 2
+M     <- 8
+N     <- M / 2
 scale <- 4
-xi <- complex(real = cos(2 * pi / M), imaginary = sin(2 * pi / M))
+xi    <- complex(real = cos(2 * pi / M), imaginary = sin(2 * pi / M))
 ```
 
 Create the (complex) numbers we will encode.
