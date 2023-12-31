@@ -82,7 +82,7 @@ pk2 = a
 Create a polynomial message
 ```{r}
 # create a message
-m = polynomial( coef=c(2, 3, 4) )
+m = polynomial( coef=c(3, 2, 1) )
 ```
 
 Create polynomials for the encryption of the message. Since e1 and e2 are constructed the same way as e, we don't print them, we just print u.
