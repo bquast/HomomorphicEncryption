@@ -24,7 +24,6 @@ Set some parameters.
 d  =   4
 n  =   2^d
 p  =   (n/2)-1
-t  =   p
 q  = 868
 ```
 
