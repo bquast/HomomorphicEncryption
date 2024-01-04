@@ -59,9 +59,8 @@ print(m)
 
 Set some parameters.
 ```{r params2}
-d  =   4
-n  =   2^d
-p  =   (n/2)-1
+n  =  16
+p  =   7
 q  = 874
 pm = polynomial( coef=c(1, rep(0, n-1), 1 ) )
 ```
@@ -106,11 +105,10 @@ decrypt <- CoefMod(decrypt, q)
 print(decrypt[1:length(coef(m))])
 ```
 
-
 Let's decode to obtain the original number:
 
 ```{r decode}
-rescaled_p <- coef(m) / scale
+rescaled_p <- coef( polynomial(decrypt[1:length(m)]) ) / scale
 z          <- sigma_function(xi, M, rescaled_p)
 decoded_z  <-pi_function(M, z)
 
