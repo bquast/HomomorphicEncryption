@@ -21,11 +21,13 @@ library(HomomorphicEncryption)
 ```
 
 Set a working seed for random numbers (so that random numbers can be replicated exactly).
+
 ```{r seed}
 set.seed(123)
 ```
 
 Set some parameters.
+
 ```{r params}
 M     <-   8
 N     <-   M / 2
@@ -57,7 +59,8 @@ Let's view the result.
 print(m)
 ```
 
-Set some parameters.
+Set some parameters:
+
 ```{r params2}
 n  =  16
 p  =   7
@@ -65,7 +68,8 @@ q  = 874
 pm = polynomial( coef=c(1, rep(0, n-1), 1 ) )
 ```
 
-Create the secret key and the polynomials a and e, which will go into the public key
+Create the secret key and the polynomials a and e, which will go into the public key:
+
 ```{r seckey}
 # generate a secret key
 s = polynomial( sample.int(3, n, replace=TRUE)-2 )
@@ -77,13 +81,15 @@ a = polynomial(sample.int(q, n, replace=TRUE))
 e = polynomial( coef=round(stats::rnorm(n, 0, n/3)) )
 ```
 
-Generate the public key.
+Generate the public key:
+
 ```{r pubkey}
 pk0 = CoefMod(-(a*s +e)%%pm,q)
 pk1 = a
 ```
 
-Create polynomials for the encryption
+Create polynomials for the encryption:
+
 ```{r}
 # polynomials for encryption
 e1 = polynomial( coef=round(stats::rnorm(n, 0, n/3)) )
@@ -91,13 +97,15 @@ e2 = polynomial( coef=round(stats::rnorm(n, 0, n/3)) )
 u  = polynomial( coef=sample.int(3, (n-1), replace=TRUE)-2 )
 ```
 
-Generate the ciphertext (encryption)
+Generate the ciphertext (encryption):
+
 ```{r}
 ct0 = CoefMod((pk0*u + e1 + m) %% pm, q)
 ct1 = CoefMod((pk1*u + e2    ) %% pm, q)
 ```
 
-Decrypt
+Decrypt:
+
 ```{r}
 decrypt <- (ct1 * s) + ct0
 decrypt <- decrypt %% pm
