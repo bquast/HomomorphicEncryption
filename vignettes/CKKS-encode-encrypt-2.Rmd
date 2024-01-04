@@ -55,7 +55,7 @@ m                   <- polynomial(coef)
 
 Let's view the result.
 
-```{r print-p}
+```{r print-m}
 print(m)
 ```
 
@@ -113,7 +113,7 @@ decrypt <- CoefMod(decrypt, q)
 print(decrypt[1:length(coef(m))])
 ```
 
-Let's decode to obtain the original number:
+Let's decode to obtain the original numbers:
 
 ```{r decode}
 rescaled_p <- decrypt[1:length(m)] / scale
