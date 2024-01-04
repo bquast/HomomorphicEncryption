@@ -108,9 +108,9 @@ print(decrypt[1:length(coef(m))])
 Let's decode to obtain the original number:
 
 ```{r decode}
-rescaled_p <- coef( polynomial(decrypt[1:length(m)]) ) / scale
+rescaled_p <- decrypt[1:length(m)] / scale
 z          <- sigma_function(xi, M, rescaled_p)
-decoded_z  <-pi_function(M, z)
+decoded_z  <- pi_function(M, z)
 
 print(decoded_z)
 ```
