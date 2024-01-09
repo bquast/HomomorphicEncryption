@@ -36,7 +36,7 @@ For general information on using the package, please refer to the help files.
 help(package='HomomorphicEncryption')
 ```
 
-There is also a long form vignette available using:
+The procedures for the various Homomorphic Encrypted schema a described in the vignettes (BFV is the starting point):
 
 ```r
 vignette(package='HomomorphicEncryption')
